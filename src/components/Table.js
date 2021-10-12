@@ -22,6 +22,7 @@ const TableBody = props => {
                 <td>{row.name}</td>
                 <td><a href={row.URL}>{row.URL}</a></td>
                 <td><button onClick={() => props.removeLink(index)}>Delete</button></td>
+                {/* <td><button onClick={}></button></td> */}
             </tr>
         );
     });
@@ -30,8 +31,14 @@ const TableBody = props => {
 }
 
 const Table = (props) => {
-//    const { linkData, removeLink } = props;
+    const { linkData, removeLink } = props;
     {/*TODO - return <table> component, TableHeader and TableBody  */}
+    return (
+        <table>
+           <TableHeader />
+            <TableBody linkData={linkData} removeLink={removeLink} />
+        </table>
+    )
 
 }
 
